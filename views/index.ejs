@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container my-4 px-3 py-1">
+    <div class="row">
+      <div class="col bg-light rounded">
+
+        <h1>May the force be with you!</h1>
+      </div>
+    </div>
+
+    <div class="row my-4">
+      <div class="col p-3 me-3 bg-light rounded">
+        <form action="/quotes" method="POST" class="position-relative">
+          <label for="name" class="form-label">Name</label>
+          <input type="text" class="form-control mb-3" name="name" id="name" placeholder="name">
+          <label for="quote" class="form-label">Quote</label>
+          <input type="text" class="form-control mb-3" name="quote" id="quote" placeholder="quote">
+          <button type="submit" class="btn btn-info">Submit</button>
+        </form>
+      </div>
+      <div class="col p-3 me-3 bg-light rounded">
+        <h2>Darth Vadar invades!</h2>
+        <p>
+          Replace first Yoda's quote with a quote written by Darth Vadar
+        </p>
+        <button class="btn btn-warning" id="update-button">Replace Yoda's quote</button>
+      </div>
+      <div class="col p-3 bg-light rounded">
+        <h2>Remove Darth Vadar!</h2>
+        <p>
+          Delete one Darth Vadar's quote. Does nothing if there are no more Darth
+          Vadar's quote
+        </p>
+        <button class="btn btn-danger" id="delete-button">Delete Darth Vadar's quote</button>
+      </div>
+    </div>
+
+    <div class="row quotes-container">
+      <div class="col p-3 bg-light rounded">
+        <ul class="quotes">
+          <% quotes.forEach(quote => {%>
+            <li class="quote">
+              <span><%= quote.name %>:</span>
+              <span><%= quote.quote %></span>
+            </li>
+          <% }) %>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div id="message"></div>
+  
+  <script src="/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+</body>
+</html>
