@@ -9,7 +9,7 @@ app.set('view engine', 'ejs')
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(express.static('public'))
 app.use(bodyParser.json())
-const connectionString = 'mongodb+srv://obiwan:hellothere@cluster0.hq49r.mongodb.net/?retryWrites=true&w=majority'
+const connectionString = 'mongodb+srv://<username>:<password>@cluster0...'
 
 MongoClient.connect(connectionString, { useUnifiedTopology: true })
 .then(client => {
